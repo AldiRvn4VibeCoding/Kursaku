@@ -46,6 +46,7 @@ export default defineConfig(async () => {
   if (process.env.GITHUB_ACTIONS === 'true') {
     return {
       css: { postcss: { plugins: [tailwindcss()] } },
+      publicDir: 'public',
       plugins: [vinext()],
     };
   }
@@ -54,6 +55,9 @@ export default defineConfig(async () => {
   const { cloudflare } = await import('@cloudflare/vite-plugin');
 
   return {
+    // The static Pages fallback is only meant for the Pages artifact. During
+    // local development the app route must remain the root document.
+    publicDir: false,
     css: { postcss: { plugins: [tailwindcss()] } },
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }
