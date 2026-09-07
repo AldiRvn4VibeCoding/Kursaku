@@ -1,7 +1,7 @@
 import { sites } from '@openai/sites-vite-plugin';
 import tailwindcss from '@tailwindcss/postcss';
 import vinext from 'vinext';
-import { defineConfig } from 'vite';
+import { defineConfig, type UserConfig } from 'vite';
 import hostingConfig from './.openai/hosting.json';
 
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
@@ -48,7 +48,7 @@ export default defineConfig(async () => {
       css: { postcss: { plugins: [tailwindcss()] } },
       publicDir: 'public',
       plugins: [vinext()],
-    };
+    } satisfies UserConfig;
   }
 
   // Wrangler snapshots its log path while the Cloudflare plugin is imported.
@@ -70,5 +70,5 @@ export default defineConfig(async () => {
         config: localBindingConfig,
       }),
     ],
-  };
+  } satisfies UserConfig;
 });
