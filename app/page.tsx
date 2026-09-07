@@ -5,6 +5,8 @@ import { ArrowDown, ArrowUpRight, RefreshCw, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RateHistory } from '@/components/rate-history';
 
+export const dynamic = 'force-static';
+
 type Quote = { rate: number; updated: number; next: number; checked: number };
 const KEY = 'usd-idr-quote-v1';
 const rupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 2 });
