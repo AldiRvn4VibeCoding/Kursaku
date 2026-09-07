@@ -85,6 +85,35 @@ a { color: inherit; } button, input { font: inherit; } button, a, input { outlin
 @media (min-width: 800px) { .history { grid-column: 1; grid-row: 8; } }
 @media (max-width: 640px) { .history { padding: 20px 12px; } .history-chart { height: 210px; } }
 
+/* Restore the spacious dashboard treatment used before the viewport compaction. */
+@media (min-width: 800px) {
+  .shell { padding-bottom: 20px; }
+  .topbar { padding: 18px 0; }
+  .heading { margin: 0 0 20px; }
+  .heading h1 { font-size: 36px; line-height: 1.2; margin: 0 0 6px; }
+  .heading .eyebrow, .heading .subtitle { display: block; }
+  .eyebrow { margin-bottom: 8px; }
+  .daily { padding: 8px 12px; }
+  .rate-card { padding: 24px; border-radius: 20px; }
+  .rate { font-size: clamp(36px, 4.8vw, 56px); line-height: 1.15; margin: 24px 0 8px; }
+  .rate-caption { display: block; margin-bottom: 24px; }
+  .rate-bottom { padding-top: 14px; }
+  .refresh { padding: 9px 12px; }
+  .details { padding: 18px 4px; }
+  .converter { padding: 28px 32px; border-radius: 16px; }
+  .converter-heading .small-icon, .converter-heading p { display: block; }
+  .converter-heading h2, .history-heading h2 { font-size: 18px; }
+  .conversion-grid { margin-top: 26px; gap: 18px; }
+  .input-wrap { padding: 15px; }
+  input { font-size: 24px; }
+  output { font-size: clamp(22px, 3vw, 30px); }
+  .history { margin-top: 20px; padding: 24px; border-radius: 16px; }
+  .history-heading p { display: block; }
+  .history-chart { height: 230px; margin-top: 16px; }
+  .history-caption, .history-source { font-size: 14px; line-height: 1.6; margin-top: 6px; }
+  footer { padding-top: 14px; line-height: 1.7; }
+}
+
 /* A single-column desktop dashboard sized for the available viewport height. */
 @media (min-width: 800px) {
   .shell {
