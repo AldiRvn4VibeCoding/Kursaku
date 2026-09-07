@@ -34,6 +34,8 @@ jobs:
         run: npm run build
         env:
           GITHUB_ACTIONS: true
+      - name: Add static entrypoint
+        run: cp index.html dist/client/index.html
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
